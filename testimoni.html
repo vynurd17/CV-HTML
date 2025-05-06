@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Testimoni - Utuy Dev</title>
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3a0ca3;
+      --light-bg: #f8f9fa;
+      --dark-bg: #121212;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1e1e1e;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    [data-bs-theme="dark"] body {
+      background-color: var(--dark-bg);
+      color: #f0f0f0;
+    }
+    
+    .navbar {
+      background-color: var(--primary-color);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .testimonials-section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      border-radius: 3px;
+    }
+    
+    .testimonial-card {
+      background-color: var(--card-bg-light);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    [data-bs-theme="dark"] .testimonial-card {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    [data-bs-theme="dark"] .testimonial-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .testimonial-text:before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.5rem;
+      font-size: 3rem;
+      color: rgba(67, 97, 238, 0.2);
+      font-family: Georgia, serif;
+    }
+    
+    .client-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--primary-color);
+    }
+    
+    .rating {
+      color: #ffc107;
+      margin-bottom: 1rem;
+    }
+    
+    .theme-toggle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2rem 0;
+    }
+    
+    .social-icon {
+      color: white;
+      font-size: 1.25rem;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-3px);
+    }
+    [data-bs-theme="dark"] body {
+    background-color: var(--dark-bg);
+    color: #0037fc;
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Luthvy web</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Profile.html">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portofolio.html">Portofolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="testimoni.html">Testimoni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Apa Kata Klien Saya</h2>
+      <p class="text-center mb-5 lead">Ulasan dari klien yang telah bekerja sama dengan saya.</p>
+      
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text mb-4">Luthvy sangat profesional dan komunikatif. Hasil websitenya melebihi ekspektasi kami. Dia tidak hanya memberikan produk akhir yang berkualitas tinggi tetapi juga memberikan saran-saran berharga untuk meningkatkan pengalaman pengguna.</p>
+            <div class="d-flex align-items-center">
+              <img src="MIA.jpg" class="client-img me-3" alt="MIA">
+              <div>
+                <h5 class="mb-1 fw-bold">Mia Agustina</h5>
+                <p class="text-muted mb-0">Pemilik UMKM TokoAndi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text mb-4">Desain dan fungsionalitas website kami meningkat drastis sejak bekerja sama dengan Luthvy. Dia memiliki kemampuan yang langka untuk menggabungkan estetika dengan fungsionalitas teknis. Proyek selesai tepat waktu dan sesuai anggaran.</p>
+            <div class="d-flex align-items-center">
+              <img src="DIRA.jpg" class="client-img me-3" alt="DIRA">
+              <div>
+                <h5 class="mb-1 fw-bold">Nadira Damayanti</h5>
+                <p class="text-muted mb-0">Pemilik Restoran</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <p class="testimonial-text mb-4">Saya sangat merekomendasikan Luthvy untuk pengembangan web. Dia sangat detail dalam pekerjaannya dan selalu terbuka untuk masukan. Website yang dibuat membantu bisnis kami mendapatkan lebih banyak pelanggan.</p>
+            <div class="d-flex align-items-center">
+              <img src="SAYA.jpg" class="client-img me-3" alt="Saya">
+              <div>
+                <h5 class="mb-1 fw-bold">vynurd</h5>
+                <p class="text-muted mb-0">Dirut Persib Bandung</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-4">Mulai Proyek Anda</h3>
+          <p class="lead mb-5">Saya siap membantu mewujudkan ide digital Anda menjadi kenyataan.</p>
+          <a href="mailto:utuydev@gmail.com" class="btn btn-primary btn-lg px-4">
+            <i class="bi bi-envelope me-2"></i>Hubungi Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h4 class="mb-4">Vyn Web</h4>
+          <div class="mb-4">
+            <a href="https://github.com/vynurd17" class="social-icon"><i class="bi bi-github"></i></a>
+            <a href="https://www.instagram.com/vynurd/" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+          </div>
+          <p class="mb-0">&copy; 2025 Utuy Dev. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Mode Toggle -->
+  <button onclick="toggleTheme()" class="theme-toggle">
+    <i class="bi bi-moon-fill"></i>
+  </button>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-bs-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      html.setAttribute("data-bs-theme", newTheme);
+      
+      // Update icon
+      const themeIcon = document.querySelector('.theme-toggle i');
+      if (newTheme === "dark") {
+        themeIcon.classList.remove('bi-moon-fill');
+        themeIcon.classList.add('bi-sun-fill');
+      } else {
+        themeIcon.classList.remove('bi-sun-fill');
+        themeIcon.classList.add('bi-moon-fill');
+      }
+    }
+    
+    // Check for saved theme preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      const themeIcon = document.querySelector('.theme-toggle i');
+      themeIcon.classList.remove('bi-moon-fill');
+      themeIcon.classList.add('bi-sun-fill');
+    }
+  </script>
+</body>
+</html>
